@@ -1,1 +1,84 @@
-sdsad
+<div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); max-width: 1537px; margin: auto;">
+    <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+        <img src="https://myidscore.id/assets/icon/sample_logo_myidscore.png"  alt="Company Logo" style="width: 454px; height: auto;" />
+    </div>
+    <h2 style="font-size: 2em; color: #c70039; text-align: center; font-weight: bold; margin-bottom: 20px;">Contact us</h2>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+        <!-- Contact Info Section -->
+        <div style="flex: 1; padding: 20px; background-color: #f5f5f5; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); margin-right: 10px;">
+            <p><strong>PEFINDO Credit Bureau (IdScore) office address </strong><br>
+                Indonesia Stock Exchange Building Tower I Floor 1<br>
+                Jl. Jend. Sudirman Kav 52-53 Jakarta 12190
+            </p>
+            <p>📧 myidscore.helpdesk@idscore.co.id<br>📞 (62-21) 515 4501 </p>
+            <p><strong>Working Hours</strong><br> ⏱︎ Monday - Friday (09:00 - 15:00)</p>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div style="flex: 1; padding: 20px; background-color: #ffffff; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+            <form id="contactForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DHu000008VGtQ" method="POST" onsubmit="showPopup(event)">
+                <input type="hidden" name="oid" value="00DHu000008VGtQ">
+                <input type="hidden" name="retURL" value="https://myidscore.id/">
+
+                <label for="first_name" style="display: block; margin-top: 10px; font-weight: bold; font-size: 1em;">First Name</label>
+                <input id="first_name" required name="first_name" type="text" maxlength="40" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;"><br>
+
+                <label for="last_name" style="display: block; margin-top: 10px; font-weight: bold; font-size: 1em;">Last Name</label>
+                <input id="last_name" name="last_name" required type="text" maxlength="80" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;"><br>
+
+                <label for="email" style="display: block; margin-top: 10px; font-weight: bold; font-size: 1em;">Email</label>
+                <input id="email" name="email" type="email" maxlength="80" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;"><br>
+
+                <label for="phone" style="display: block; margin-top: 10px; font-weight: bold; font-size: 1em;">Phone</label>
+                <input id="phone" maxlength="40" name="phone" size="20" type="text" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;" /><br>
+               <label for="company" style="display: block; margin-top: 10px; font-weight: bold; font-size: 1em;">Company</label>
+            <input  id="company" maxlength="40" name="company" size="20" type="text" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;" /><br>
+                
+                <label for="Requirements__c" style="display: block; margin-top: 10px; font-weight: bold; font-size: 1em;">Requirements</label>
+                <select id="Requirements__c" name="Requirements__c" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;">
+                    <option value="">-- Select Category --</option>
+                    <option value="Account">Account</option>
+                    <option value="Payment">Payment</option>
+                    <option value="Verification">Verification</option>
+                    <option value="Report">Report</option>
+                    <option value="Close account">Close account</option>
+                </select><br>
+
+                <label for="IdScore_Message__c" style="display: block; margin-top: 10px; font-weight: bold; font-size: 1em;">IdScore Message</label>
+                <textarea id="IdScore_Message__c" name="IdScore_Message__c" rows="4" maxlength="500" style="width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; resize: none;"></textarea><br>
+
+                <input type="submit" value="Send Message" style="background-color: #c70039; color: #ffffff; padding: 12px 24px; border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer; width: 100%; text-align: center; font-weight: bold;">
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Popup message -->
+<div id="popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); align-items: center; justify-content: center;">
+    <div style="background-color: #ffffff; padding: 20px; border-radius: 10px; max-width: 500px; text-align: center;">
+        <p style="font-size: 1.2em; font-weight: bold;">Your Lead has been registered in our system, our representative will get back to you shortly.</p>
+        <button onclick="closePopup()" style="background-color: #c70039; color: #ffffff; padding: 10px 20px; border: none; border-radius: 5px; font-size: 1em; cursor: pointer;">Okay</button>
+    </div>
+</div>
+
+<script>
+let isPopupShown = false; // Track if the popup has been shown
+
+function showPopup(event) {
+    if (!isPopupShown) {
+        event.preventDefault(); // Prevent submission on the first time
+        document.getElementById("popup").style.display = "flex"; // Show the popup
+        isPopupShown = true; // Update the flag so the popup won't show again
+    }
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none"; // Hide the popup
+    
+    // Submit the form after closing the popup and redirect after submission
+    setTimeout(() => {
+        document.getElementById("contactForm").submit(); // Submit the form
+    }, 100); // Small delay to ensure the popup closes smoothly
+}
+</script>
